@@ -84,7 +84,7 @@ section.allElems{
     /* font-size: 40px; */
     display: none;
     position: absolute;
-    padding: 40px;
+    padding: 30px;
 }
 .back{
     position: absolute;
@@ -127,7 +127,8 @@ section.allElems{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:center;
+    justify-content: flex-start;
     padding: 40px;
     overflow: auto;
 }
@@ -135,11 +136,11 @@ section.allElems{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 40px;
+    padding: 30px;
 }
-.todo-container .addTask form input{
+.todo-container .addTask form input#task-input{
     padding: 10px 25px;
-    width: 100%;
+    /* width: 100%; */
     font-size: 22px;
     background-color: var(--pri);
     color: var(--sec);
@@ -147,9 +148,10 @@ section.allElems{
     border: none;
     outline: none;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 .todo-container .addTask form textarea{
-    padding: 10px 25px;
+    padding: 8px 25px;
     width: 100%;
     font-size: 22px;
     background-color: var(--pri);
@@ -162,7 +164,7 @@ section.allElems{
 .todo-container .addTask form button{
     padding: 10px ;
     width: 100%;
-    font-size: 25px;
+    font-size: 22px;
     background-color: var(--tri1);
     border-radius: 5px;
     border: none;
@@ -195,4 +197,19 @@ section.allElems{
     border-radius: 5px;
     border: none;
     font-weight: 500;
+}
+.mark-imp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    gap: 30px;
+}
+.mark-imp input{
+    scale: 1.7;
+}
+.mark-imp label{
+    font-size: 20px;
 }
