@@ -13,26 +13,65 @@ function openFeature(){
         })
     })
 }
-// openFeature()
-let form=document.querySelector('.addTask form');
+openFeature()
+function toDoList(){
+    let form=document.querySelector('.addTask form');
 let taskInput=document.querySelector('.addTask form #task-input');
 let taskDetailInput=document.querySelector('.addTask form textarea');
 let taskCheckBox=document.querySelector('.addTask form #check');
-let allTask=[
-    {
-        task:'Mandir Jao',
-        details:'Hanuman jee vale',
-        imp:true
-    },
-    {
-        task:'Recording karo',
-        details:'cohort ke liye',
-        imp:true
-    },
-]
+
+let currentTask=[]
+
+if(localStorage.getItem('currentTask')){
+    currentTask=JSON.parse(localStorage.getItem('currentTask'))
+}
+else{
+    console.log('task list is empty')
+}
+
+let allTask=document.querySelector(".allTask");
+function renderTask(){
+    let sum = '';
+    currentTask.forEach((elem, idx) => {
+        sum += `
+        <div class="task">
+            <details>
+                <summary>
+                    ${elem.task}
+                    <span class="${elem.imp}"> imp </span>
+                </summary>
+                <p>${elem.details || 'No details provided.'}</p>
+            </details>
+            <button id="${idx}">Mark as completed</button>
+        </div>`;
+    });
+    allTask.innerHTML = sum;
+}
+
+renderTask();
+
+allTask.addEventListener('click',(dets)=>{
+    if(dets.target.tagName==='BUTTON'){
+        let idx=+dets.target.id;
+        currentTask.splice(idx,1);
+        localStorage.setItem('currentTask',JSON.stringify(currentTask))
+        renderTask();
+    }
+})
+
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    console.log(taskInput.value);
-    console.log(taskDetailInput.value);
-    console.log(taskCheckBox.checked)
+    currentTask.push({task:taskInput.value,
+        details:taskDetailInput.value,
+        imp:taskCheckBox.checked})
+        taskInput.value=" "
+        taskDetailInput.value=" "
+        taskCheckBox.checked=false;
+        localStorage.setItem('currentTask',JSON.stringify(currentTask))
+        renderTask();
 })
+// localStorage.clear();
+
+
+}
+toDoList()
