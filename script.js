@@ -13,7 +13,7 @@ function openFeature(){
         })
     })
 }
-openFeature()
+// openFeature()
 function toDoList(){
     let form=document.querySelector('.addTask form');
 let taskInput=document.querySelector('.addTask form #task-input');
@@ -74,4 +74,25 @@ form.addEventListener('submit',(e)=>{
 
 
 }
-toDoList()
+// toDoList()
+
+let dayPlanData=JSON.parse(localStorage.getItem('dayPlanData'))||{}
+let dayPlanner=document.querySelector('.day-planner')
+let hours =Array.from({length:18},(elem,idx)=>`${6+idx}:00 - ${7+idx}:00`)
+let wholeSum=''
+hours.forEach((elem,idx)=>{
+    let savedData=dayPlanData[idx]||' ';
+    console.log(savedData[idx])
+    wholeSum+=` <div class="day-planner-time">
+                    <p>${elem}</p>
+                    <input id='${idx}' type="text" name="" id="" placeholder="..." value=${savedData}>
+                </div>`
+})
+dayPlanner.innerHTML=wholeSum;
+let dayplannerInput=document.querySelectorAll('.day-planner-time input')
+dayplannerInput.forEach((elem)=>{
+    elem.addEventListener('input',()=>{
+        dayPlanData[elem.id]=elem.value
+        localStorage.setItem('dayPlanData',JSON.stringify(dayPlanData))
+    })
+})
