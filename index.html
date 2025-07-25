@@ -7,15 +7,36 @@
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"/>
+    <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="main">
         <nav>
-
+            <div class="nav-in">
+                <h2>Productivity Dashboard</h2>
+                <div class="theme">
+                <i class="ri-sun-line"></i>
+                </div>
+            </div>
         </nav>
         <section class="allElems">
-            <div class="todo elem" id="0">
+            <header>
+                <div class="header1">
+                    <h2>20 July 2025</h2>
+                    <h1>Tuesday, 8:00 pm</h1>
+                    <h4>Khopoli (Maharashtra)</h4>
+                </div>
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Light rain</h4>
+                    <h3 class="precipitation">Precipitation: 60%</h3>
+                    <h3 class="humidity">Humidity: 95%</h3>
+                    <h3 class="wind">Wind: 5 mph</h3>
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
                 <img src="https://plus.unsplash.com/premium_photo-1710962184909-f9f8dc2c9f5f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fDNkfGVufDB8fDB8fHww" alt="">
                 <h2>To Do List</h2>
             </div>
@@ -35,8 +56,9 @@
                 <img src="https://images.unsplash.com/photo-1718202248232-0cdbc15d29b2?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                 <h2>Daily Goals</h2>
             </div>
+            </div>
         </section>
-        <section class="fullElems todo-list-fullPage">
+        <section class="fullElems todo-list-fullPage" id="0">
             <button class="back" id="0">Close</button>
             <h2>Your Personalized Task List</h2>
             <div class="todo-container">
@@ -56,7 +78,7 @@
                 </div>
             </div>
         </section>
-        <section class="fullElems daily-planner-fullPage">
+        <section class="fullElems daily-planner-fullPage" id="1">
             <button class="back" id="1">Close</button>
             <h2>Plan Your day to be more Productive</h2>
             <div class="day-planner">
@@ -64,11 +86,33 @@
         </section>
         <section class="fullElems motivation-fullPage" id="2">
             <button class="back" id="2">Close</button>
-            <h2>Motivation</h2>
+            <div class="motivation-container-fullpage">
+                <div class="motivation-container">
+                <div class="motivation-wrapper">
+                    <img src="./icons8-quotes-100.png" alt="">
+                    <div class="motivation-1">
+                        <h2>Quote of the Day</h2>
+                    </div>
+                    <div class="motivation-2">
+                        <h1> </h1>
+                    </div>
+                    <div class="motivation-3">
+                        <h2> </h2>
+                    </div>
+                </div>
+            </div>
+            </div>
         </section>
-        <section class="fullElems pomodoro-timer-fullPage" id="3">
+        <section class="fullElems pomodoro-fullPage" id="3">
             <button class="back" id="3">Close</button>
-            <h2>Pomodoro Timer</h2>
+            <h2>Study With me!</h2>
+            <h4 class="session">Work-session</h4>
+            <div class="pomo-timer">
+                <h1>25:00</h1>
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
         </section>
         <section class="fullElems daily-goals-fullPage" id="4">
             <button class="back" id="4">Close</button>
